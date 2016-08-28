@@ -72,3 +72,6 @@ scratch.*
 apps/*
 mule-enterprise-standalone-3.7.3/*
 mule
+mule-enterprise-standalone-3.7.3
+__MACOSX/
+mule-enterprise-standalone-3.7.3.zip
