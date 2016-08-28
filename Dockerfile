@@ -1,4 +1,5 @@
 FROM java:openjdk-8-jdk
+# 3.8.0 branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@gmail.com>
 
