@@ -1,6 +1,6 @@
 FROM java:openjdk-8-jdk
 
-MAINTAINER victor.romero@gmail.com
+MAINTAINER Brandon Grantham <brandon.grantham@gmail.com>
 
 RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.8.0/mule-standalone-3.8.0.tar.gz && echo "d9279b3f0373587715613341a16483f3 mule-standalone-3.8.0.tar.gz" | md5sum -c
 
