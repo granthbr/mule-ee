@@ -20,3 +20,4 @@ CMD [ "/opt/mule/bin/mule" ]
 
 # Default http port
 EXPOSE 8081
+EXPOSE 8080
