@@ -1,11 +1,14 @@
 FROM java:openjdk-8-jdk
-# 3.8.0 branch
+# 3.8.2 ee branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@gmail.com>
 
-RUN cd ~ && wget https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.8.0/mule-standalone-3.8.0.tar.gz && echo "d9279b3f0373587715613341a16483f3 mule-standalone-3.8.0.tar.gz" | md5sum -c
 
-RUN cd /opt && tar xvzf ~/mule-standalone-3.8.0.tar.gz && rm ~/mule-standalone-3.8.0.tar.gz && ln -s /opt/mule-standalone-3.8.0 /opt/mule
+ADD ./runtime/mule-ee-distribution-standalone-3.8.3.zip /opt/
+WORKDIR /opt
+RUN unzip -d mule *.zip
+ADD ./*.lic /opt/mule/conf
+RUN bin/mule -installLicense mule/conf/mule-ee-license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples 
 
 # Define environment variables.
 ENV MULE_HOME /opt/mule
