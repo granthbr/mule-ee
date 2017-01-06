@@ -1,6 +1,6 @@
-# FROM java:openjdk-8-jdk
+FROM java:openjdk-8-jdk
 
-FROM openjdk:alpine
+# FROM openjdk:alpine
 # 3.8.2 ee branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@gmail.com>
