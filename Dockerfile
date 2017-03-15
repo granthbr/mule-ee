@@ -1,7 +1,7 @@
 FROM java:openjdk-8-jdk
 
 # FROM openjdk:alpine
-# 3.8.2 ee branch
+# 3.8.3 ee branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@gmail.com>
 
@@ -26,4 +26,8 @@ CMD [ "/opt/mule/bin/mule" ]
 
 # Default http port
 EXPOSE 8081
-EXPOSE 8080
+EXPOSE 8082
+EXPOSE 8084
+EXPOSE 8085
+EXPOSE 8091
+EXPOSE 8090

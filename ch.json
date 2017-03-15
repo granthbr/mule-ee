@@ -1,0 +1,75 @@
+{
+  "id": "5876757ce4b0c21f04bbafe8",
+  "csId": "efe5b011-8892-45e8-8e0a-e030c033a384",
+  "name": "testQA123",
+  "enabled": true,
+  "globalDeployment": {
+    "enabled": false
+  },
+  "plan": {
+    "maxProductionWorkers": 1,
+    "maxSandboxWorkers": 0,
+    "workerTypes": [
+      {
+        "name": "Micro",
+        "workerVal": 0.1,
+        "weight": 0.1,
+        "cpu": "0.1 vCores",
+        "memory": "500 MB memory"
+      },
+      {
+        "name": "Small",
+        "workerVal": 0.2,
+        "weight": 0.2,
+        "cpu": "0.2 vCores",
+        "memory": "1 GB memory"
+      },
+      {
+        "name": "Medium",
+        "workerVal": 1,
+        "weight": 1,
+        "cpu": "1 vCore",
+        "memory": "1.5 GB memory"
+      },
+      {
+        "name": "Large",
+        "workerVal": 2,
+        "weight": 2,
+        "cpu": "2 vCores",
+        "memory": "3.5 GB memory"
+      },
+      {
+        "name": "xLarge",
+        "workerVal": 4,
+        "weight": 4,
+        "cpu": "4 vCores",
+        "memory": "7.5 GB memory"
+      }
+    ],
+    "maxStandardConnectors": 0,
+    "maxPremiumConnectors": 0,
+    "maxStaticIps": 0,
+    "apiFabric": false,
+    "secureDataGateway": false,
+    "directVpn": false
+  },
+  "downloadApplicationsEnabled": true,
+  "persistentQueuesEncryptionEnabled": false,
+  "loggingCustomLog4jEnabled": false,
+  "usage": {
+    "sandboxes": 0,
+    "productions": 0,
+    "standardConnectors": 0,
+    "premiumConnectors": 0,
+    "productionApplications": 0,
+    "sandboxApplications": 0,
+    "productionWorkers": 0,
+    "sandboxWorkers": 0,
+    "staticIps": 0,
+    "vpcs": 0,
+    "loadbalancers": 0
+  },
+  "multitenancy": {
+    "enabled": false
+  }
+}
