@@ -27,7 +27,7 @@ Image types
 ---------------
 
 There are two ways now to use the Docker images, depending on the overall scenario:
-- you can use the base images to startup and create in a classical operations sense multiple standalone Mule ESB instances and one MMC instance. These can be used as a cluster as usual with hot deployment over MMC etc.
+- you can use the base images to startup and create a classical   standalone Mule ESB instances and one MMC instance. These can be used as a cluster as usual with hot deployment over MMC etc.
 - or, which we recommend, create an Docker image for each Mule ESB application to isolate applications from each other and this way startup and create multiple standalone Mule ESB instances and one MMC instance. This might be a an option in a Micro Services or SOA scenario.
 
 Standalone Mule ESB Enterprise Container
@@ -39,7 +39,7 @@ Start a standalone Mule ESB Enterprise instance
 docker run -t -i --name='mule-ee-nodeX' mule-ee
 ```
 
-> Notice: On OSX boot2docker VBox requires port forwarding from docker -> VBox -> host
+> Notice: On OSX boot2docker VBox requires port forwarding from docker -> VBox -> host (not even sure if this applies anymore...)
 >
 > ```bash
 >  boot2docker ssh -L 8585:localhost:8585
@@ -65,6 +65,6 @@ Start app specific image:
 
 ```bash
 docker run -t -i --name='mule-app-node' my-mule-app-image
-for example (including externally mountable apps directory):
+# for example (including externally mountable apps directory):
 docker run -it --name='mule-ee' -v `pwd`/apps:/opt/mule/apps granthbr/mule-ee
 ```
