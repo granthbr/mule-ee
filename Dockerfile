@@ -10,7 +10,7 @@ RUN useradd --user-group --shell /bin/false mule && chown mule /opt
 USER mule
 RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-3.8.5.zip \
 	&& unzip *.zip \
-	&& ln -s mule-enterprise-standalone-3.8.3 mule && rm mule-ee-distribution-standalone-3.8.5.zip
+	&& ln -s mule-enterprise-standalone-3.8.5 mule && rm mule-ee-distribution-standalone-3.8.5.zip
 
 	# to add a license insert the following line
  # ADD ./*.lic /opt/mule-enterprise-standalone-3.8.5/conf 
