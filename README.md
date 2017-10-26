@@ -65,6 +65,6 @@ Start app specific image:
 
 ```bash
 docker run -t -i --name='mule-app-node' my-mule-app-image
-for example (including externally mountable apps directory):
+# for example (including externally mountable apps directory):
 docker run -it --name='mule-ee' -v `pwd`/apps:/opt/mule/apps granthbr/mule-ee
 ```
