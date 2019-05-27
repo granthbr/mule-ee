@@ -1,20 +1,20 @@
 FROM java:openjdk-8-jdk
 
-# 3.8.5 ee branch
+# 4.1.1 ee branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@mulesoft.com>
 
 WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
 USER mule
-RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-3.8.5.zip \
+RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.1.zip \
 	&& unzip *.zip \
-	&& ln -s mule-enterprise-standalone-3.8.5 mule && rm mule-ee-distribution-standalone-3.8.5.zip
+	&& ln -s mule-enterprise-standalone-4.1.1 mule && rm mule-ee-distribution-standalone-4.1.1.zip
 
 	# to add a license insert the following line
- # ADD ./*.lic /opt/mule-enterprise-standalone-3.8.5/conf 
- ADD ./start.sh /opt
- # to complete the license install uncomment the next line
+# ADD ./*.lic /opt/mule-enterprise-standalone-3.8.5/conf 
+ADD ./start.sh /opt
+# to complete the license install uncomment the next line
 # RUN mule/bin/mule -installLicense mule/conf/mule-ee-license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples
 #
 # # Define environment variables.
@@ -27,7 +27,7 @@ VOLUME ["/opt/mule/logs", "/opt/mule/conf", "/opt/mule/apps", "/opt/mule/domains
 WORKDIR /opt/mule
 #
 CMD [ "./start.sh" ]
-#
+
 # # Default http port
 EXPOSE 8081
 EXPOSE 8082
