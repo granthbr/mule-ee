@@ -13,7 +13,7 @@ Due to restrictions of the Enterprise version, the Docker image needs to be set 
 Hence the directory should look like this:
 * mule-ee/
 * mule-ee/Dockerfile
-* mule-ee/mmc-distribution-mule-console-bundle-3.5.1.zip
+* mule-ee/mmc-distribution-mule-console-bundle-4.1.1.zip
 * mule-ee/mule-ee-license.lic
 
 Building and tagging the Docker base image
@@ -39,12 +39,6 @@ Start a standalone Mule ESB Enterprise instance
 docker run -t -i --name='mule-ee-nodeX' mule-ee
 ```
 
-> Notice: On OSX boot2docker VBox requires port forwarding from docker -> VBox -> host (not even sure if this applies anymore...)
->
-> ```bash
->  boot2docker ssh -L 8585:localhost:8585
-> ```
-
 App specific container image
 ---------------
 
@@ -52,7 +46,7 @@ App specific container image
 FROM                    mule-ee:latest
 .
 .
-ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-3.5.1/apps/
+ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-4.1.1/apps/
 ```
 
 Build application specific Docker image:
@@ -65,6 +59,7 @@ Start app specific image:
 
 ```bash
 docker run -t -i --name='mule-app-node' my-mule-app-image
+
 # for example (including externally mountable apps directory):
 docker run -it --name='mule-ee' -v `pwd`/apps:/opt/mule/apps granthbr/mule-ee
 ```
