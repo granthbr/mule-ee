@@ -77,4 +77,5 @@ __MACOSX/
 mule-enterprise-standalone-3.7.3.zip
 runtime/*
 mule-ee.license.lic
-logss/
+logs/
+domains/
