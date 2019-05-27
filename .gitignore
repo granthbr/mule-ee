@@ -67,7 +67,7 @@ pom.xml.releaseBackup
 
 release.properties
 logs/
-conf/
+conf/license.license
 scratch.*
 apps/*
 mule-enterprise-standalone-3.7.3/*
