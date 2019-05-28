@@ -8,7 +8,10 @@ Preparing the Docker base image
 ---------------
 
 Due to restrictions of the Enterprise version, the Docker image needs to be set up for individual usage beforehand. To run this as a licenced version of MuleSoft please install the license.
-- provide the Enterprise license file from Mulesoft, located in the source control main repo under the cong folder. There is a placeholder in github. It can be ignored or removed. It needed to be there for the directory to be committed.
+- Collect the Enterprise license file from MuleSoft
+- Copy the license key (be sure to keep the original) in the source control main repo under the lic folder. 
+- Be sure not to commit this license. It is difficult to invalidate the licesne if it is captured by a third party. 
+
 Once the EE license is added to the github repo, run the build command.
 
 The directory should look similar this (or the developer's preference):
@@ -65,6 +68,7 @@ Start app specific image:
 
 ```docker run -t -i --name='mule-app-node' my-mule-app-image
 ```
-### for example (including externally mountable apps directory):
-```docker run -it --name='mule-ee-411' -v `pwd`/apps:/opt/mule/apps granthbr/mule-ee-411
+### for example (including externally mountable apps  and logs directory):
+```docker run -it --name='mule-ee-411' -v `pwd`/apps:/opt/mule/apps -v `pwd`/logs:opt/mule/logs/ granthbr/mule-ee-411
 ```
+This will embed the app in the application run time but, the app can still be overridden with a replacement if the app is removed from the app/ folder and replaced with another app. It is our preference to externally mount the log directory for the purpose of tailing the system/applicaiton log while the Mule container is running. If not needed, exclude the mount of the log/ directory.
