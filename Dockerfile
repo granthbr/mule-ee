@@ -11,11 +11,11 @@ RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standa
 	&& unzip *.zip \
 	&& ln -s mule-enterprise-standalone-4.1.1 mule && rm mule-ee-distribution-standalone-4.1.1.zip
 
-	# to add a license insert the following line
-# ADD ./*.lic /opt/mule-enterprise-standalone-3.8.5/conf 
+# to add a license insert the following line
+ADD ./conf/license.lic /opt/mule/conf/ 
 ADD ./start.sh /opt
 # to complete the license install uncomment the next line
-# RUN mule/bin/mule -installLicense mule/conf/mule-ee-license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples
+RUN mule/bin/mule -installLicense mule/conf/license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples
 #
 # # Define environment variables.
 ENV MULE_HOME /opt/mule
