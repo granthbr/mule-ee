@@ -1,6 +1,6 @@
 FROM java:openjdk-8-jdk
 
-# 4.1.4 ee branch
+# 4.1.1 ee branch
 
 MAINTAINER Brandon Grantham <brandon.grantham@mulesoft.com>
 
@@ -13,9 +13,9 @@ WORKDIR /opt
 RUN useradd --user-group --shell /bin/false mule && chown mule /opt 
 USER mule
 # get mule ee runtime
-RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.4.zip \
+RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.1.1.zip \
 	&& unzip *.zip \
-	&& ln -s mule-enterprise-standalone-4.1.4 mule && rm mule-ee-distribution-standalone-4.1.4.zip
+	&& ln -s mule-enterprise-standalone-4.1.1 mule && rm mule-ee-distribution-standalone-4.1.1.zip
 
 # to add a license insert the following line
 ADD lic/license.lic $MULE_HOME/conf/license.lic
