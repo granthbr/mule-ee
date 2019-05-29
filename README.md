@@ -26,11 +26,11 @@ Building and tagging the Docker base image
 ---------------
 
 ```bash
-docker build --tag="mule-ee-411" .
+docker build --tag="mule-ee-414" .
 ```
 
 Image types
----------------
+---------------414
 
 There are two ways now to use the Docker images, depending on the overall scenario:
 
@@ -69,6 +69,6 @@ Start app specific image:
 ```docker run -t -i --name='mule-app-node' my-mule-app-image
 ```
 ### for example (including externally mountable apps  and logs directory):
-```docker run -it --name='mule-ee-411' -v `pwd`/apps:/opt/mule/apps -v `pwd`/logs:/opt/mule/logs/ mule411
+```docker run -it --name='mule-ee-414' -v `pwd`/apps:/opt/mule/apps -v `pwd`/logs:/opt/mule/logs/ mule414
 ```
 This will embed the app in the application run time but, the app can still be overridden with a replacement if the app is removed from the app/ folder and replaced with another app. It is our preference to externally mount the log directory for the purpose of tailing the system/applicaiton log while the Mule container is running. If not needed, exclude the mount of the log/ directory.
