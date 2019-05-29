@@ -2,7 +2,7 @@ Standalone Mule ESB Enterprise Docker Image
 ===============
 
 This project contains a Dockerfile for the deployment and packaging of a standalone Mule ESB Enterprise with Docker.
-This build is specific to Mule version 4.1.4.  Mule 4.2 to come soon. 
+This build is specific to Mule version 4.2.  Mule 4.2 to come soon. 
 
 Preparing the Docker base image
 ---------------
@@ -18,7 +18,7 @@ The directory should look similar this (or the developer's preference):
 * mule-ee/
 * mule-ee/Dockerfile
 (only include the mmc component if the dev intentds on deploying APIs)
-* mule-ee/mmc-distribution-mule-console-bundle-4.1.4.zip
+* mule-ee/mmc-distribution-mule-console-bundle-4.2.zip
 
 * mule-ee/conf/license.lic -- DO NOT COMMIT LICENSE TO GITHUB
 
@@ -26,11 +26,11 @@ Building and tagging the Docker base image
 ---------------
 
 ```bash
-docker build --tag="mule-ee-414" .
+docker build --tag="mule-ee-42" .
 ```
 
 Image types
----------------414
+---------------
 
 There are two ways now to use the Docker images, depending on the overall scenario:
 
@@ -56,7 +56,7 @@ App specific container image
 FROM                    mule-ee:latest
 .
 .
-ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-4.1.4/apps/
+ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-4.2/apps/
 ```
 
 Build application specific Docker image:
@@ -69,6 +69,6 @@ Start app specific image:
 ```docker run -t -i --name='mule-app-node' my-mule-app-image
 ```
 ### for example (including externally mountable apps  and logs directory):
-```docker run -it --name='mule-ee-414' -v `pwd`/apps:/opt/mule/apps -v `pwd`/logs:/opt/mule/logs/ mule414
+```docker run -it --name='mule-ee-42' -v `pwd`/apps:/opt/mule/apps -v `pwd`/logs:/opt/mule/logs/ mule42
 ```
 This will embed the app in the application run time but, the app can still be overridden with a replacement if the app is removed from the app/ folder and replaced with another app. It is our preference to externally mount the log directory for the purpose of tailing the system/applicaiton log while the Mule container is running. If not needed, exclude the mount of the log/ directory.
