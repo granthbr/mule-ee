@@ -79,4 +79,4 @@ runtime/*
 mule-ee.license.lic
 logss/
 lic/*
-gitMaster.sh
+./gitMaster.sh
