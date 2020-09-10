@@ -1,5 +1,6 @@
-Standalone Mule ESB Enterprise Docker Image
+Standalone Mule ESB Enterprise Docker Image 
 ===============
+Master branch is now 4.3.0
 
 This project contains a Dockerfile for the deployment and packaging of a standalone Mule ESB Enterprise with Docker.
 
@@ -10,10 +11,10 @@ Due to restrictions of the Enterprise version, the Docker image needs to be set 
 - provide the Enterprise standalone server from Mulesoft. In this Dockerfile we asume the downloaded trial version from [mulesoft.com](http://www.mulesoft.com/mule-esb-enterprise-30-day-trial), located in the same folder as the Dockerfile.
 - provide the Enterprise license file from Mulesoft, located in the same folder as the Dockerfile.
 
-Hence the directory should look like this:
+The directory should look like this:
 * mule-ee/
 * mule-ee/Dockerfile
-* mule-ee/mmc-distribution-mule-console-bundle-3.5.1.zip
+* mule-ee/mmc-distribution-mule-console-bundle-4.3.0.zip
 * mule-ee/mule-ee-license.lic
 
 Building and tagging the Docker base image
@@ -52,7 +53,7 @@ App specific container image
 FROM                    mule-ee:latest
 .
 .
-ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-3.5.1/apps/
+ADD                     mule-app/target/mule-app-1.0.0-SNAPSHOT.zip /opt/mule-standalone-4.3.0/apps/
 ```
 
 Build application specific Docker image:
