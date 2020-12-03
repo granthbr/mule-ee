@@ -40,11 +40,6 @@ Start a standalone Mule ESB Enterprise instance
 docker run -t -i --name='mule-ee-nodeX' mule-ee
 ```
 
-> Notice: On OSX boot2docker VBox requires port forwarding from docker -> VBox -> host (not even sure if this applies anymore...)
->
-> ```bash
->  boot2docker ssh -L 8585:localhost:8585
-> ```
 
 App specific container image
 ---------------

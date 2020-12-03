@@ -9,11 +9,15 @@ RUN useradd --user-group --shell /bin/false mule && chown mule /opt
 USER mule
 RUN wget https://s3.amazonaws.com/new-mule-artifacts/mule-ee-distribution-standalone-4.3.0.zip \
 	&& unzip *.zip \
-	&& ln -s mule-enterprise-standalone-3.8.5 mule && rm mule-ee-distribution-standalone-4.3.0.zip
+	&& ln -s mule-enterprise-standalone-4.3.0 mule && rm mule-ee-distribution-standalone-4.3.0.zip
 
 	# to add a license insert the following line
- # ADD ./*.lic /opt/mule-enterprise-standalone-3.8.5/conf 
+
  ADD ./start.sh /opt
+ # to add a license insert the following three lines
+ # RUN rm /opt/mule/muleLicenseKey.lic
+ ADD ./license.lic /opt/mule/conf
+ RUN /opt/mule/bin/mule -installLicense /opt/mule/conf/license.lic
  # to complete the license install uncomment the next line
 # RUN mule/bin/mule -installLicense mule/conf/mule-ee-license.lic && rm -f mule/conf/mule-ee-license.lic && rm -Rf examples
 #
